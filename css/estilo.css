@@ -1,0 +1,102 @@
+:root {
+    /* cores do projeto*/
+    --colororange: #ff7833;
+    --colorblack: #31333b;
+    --colorpdrtext: #e7e7e7;
+    --colorpdrbck: #444856;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    margin: 0;
+    color: var(--colorpdrtext);
+    background-color: #ccc;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    line-height: 1.7; /* aplicação devido a comparação com o projeto original. Analisando com o devtools*/
+}
+/*----config pag----*/
+
+h1 {
+    font-size: 4rem;
+    color: #a9a7a7;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+h2 {
+    margin-top: 1rem;
+}
+article {/* aplicação para apoio dos elementos as margins do h1 e h2 são seram sobrepostase*/
+    padding-top: 1px;
+    padding-bottom: 1px;
+
+}
+h2, h3, h4, h5, h6 {
+    color: var(--colororange);
+    margin: 0;
+}
+
+.main-header,
+.main {
+    font-size: 1.6rem;
+    /*Voltando para que 1em tenha o valor de 16px somente para textos*/
+   }
+
+a {
+    color: inherit;
+    /* herdando cor do body*/
+}
+/*--------------------------------------------------------*/
+
+/*----header home----*/
+
+.main-header {    
+    flex: 0 0 26rem;
+    /* declarando largura --> grow, para o .main-header não aumentar da sua largura. shrink, par a .main-header não diminuir e basic a largura;*/
+    background-color: var(--colorblack);  
+    
+}
+.main-nav {
+text-align: right;
+padding: 6.5rem 2.4rem 2.4rem;
+}
+
+.perfil-img {
+    width: 10rem;
+
+}
+
+.main-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.main-nav>ul li {
+    border-bottom:  1px solid #7b7b7b;
+    padding: .4rem 0;     
+}
+
+.main-nav>ul>li a {
+    display: block;    
+    padding: 1.2rem 0;  
+    text-decoration: none;
+    transition: padding-right .2s , backgroundo-color .4s;
+    background-color: transparent;
+}
+
+.main-nav>ul>li a:hover {
+    background-color: var(--colorpdrbck);
+    padding-right: 1rem;
+}
+/*-------------main---------------*/
+.main {
+    background-color: var(--colorpdrbck);
+    flex: 1 0;
+    /*declarando largura --> grow, para o .main não aumentar da sua largura. shrink, par a .main não diminuir */
+    padding: 6.5rem 6rem 7.5rem;
+}
