@@ -17,8 +17,10 @@ body {
     background-color: #ccc;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     min-height: 100vh;
-    line-height: 1.7; /* aplicação devido a comparação com o projeto original. Analisando com o devtools*/
+    line-height: 1.7;
+    /* aplicação devido a comparação com o projeto original. Analisando com o devtools*/
 }
+
 /*----config pag----*/
 
 h1 {
@@ -31,12 +33,18 @@ h1 {
 h2 {
     margin-top: 1rem;
 }
-article {/* aplicação para apoio dos elementos as margins do h1 e h2 são seram sobrepostase*/
-    padding-top: 1px;
-    padding-bottom: 1px;
+
+article {
+    /* aplicação para apoio dos elementos as margins do h1 e h2 são seram sobrepostase*/
+   padding: 1em 0;
 
 }
-h2, h3, h4, h5, h6 {
+
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--colororange);
     margin: 0;
 }
@@ -45,25 +53,27 @@ h2, h3, h4, h5, h6 {
 .main {
     font-size: 1.6rem;
     /*Voltando para que 1em tenha o valor de 16px somente para textos*/
-   }
+}
 
 a {
     color: inherit;
     /* herdando cor do body*/
 }
+
 /*--------------------------------------------------------*/
 
 /*----header home----*/
 
-.main-header {    
+.main-header {
     flex: 0 0 26rem;
-    /* declarando largura --> grow, para o .main-header não aumentar da sua largura. shrink, par a .main-header não diminuir e basic a largura;*/
-    background-color: var(--colorblack);  
-    
+    /* declarando largura --> 1grow, para o .main-header não aumentar da sua largura. 2shrink, par a .main-header não diminuir e 3basic a largura;*/
+    background-color: var(--colorblack);
+
 }
+
 .main-nav {
-text-align: right;
-padding: 6.5rem 2.4rem 2.4rem;
+    text-align: right;
+    padding: 6.5rem 2.4rem 2.4rem;
 }
 
 .perfil-img {
@@ -77,15 +87,15 @@ padding: 6.5rem 2.4rem 2.4rem;
 }
 
 .main-nav>ul li {
-    border-bottom:  1px solid #7b7b7b;
-    padding: .4rem 0;     
+    border-bottom: 1px solid #7b7b7b;
+    padding: .4rem 0;
 }
 
 .main-nav>ul>li a {
-    display: block;    
-    padding: 1.2rem 0;  
+    display: block;
+    padding: 1.2rem 0;
     text-decoration: none;
-    transition: padding-right .2s , backgroundo-color .4s;
+    transition: padding-right .2s, backgroundo-color .4s;
     background-color: transparent;
 }
 
@@ -93,10 +103,23 @@ padding: 6.5rem 2.4rem 2.4rem;
     background-color: var(--colorpdrbck);
     padding-right: 1rem;
 }
+
 /*-------------main---------------*/
 .main {
     background-color: var(--colorpdrbck);
     flex: 1 0;
     /*declarando largura --> grow, para o .main não aumentar da sua largura. shrink, par a .main não diminuir */
-    padding: 6.5rem 6rem 7.5rem;
+    padding: 6.5rem 6rem 100vh; /* padding de 100vh para sempre ter barra de rolagem*/
+}
+
+/*-------------tipografia---------------*/
+.underline {
+    text-decoration: red wavy underline;
+}
+.hightlight {
+
+    border-left: 1px solid var(--colororange);
+    font-size: 1.1em;
+    padding-left: 1em;
+    margin-bottom: 2.2em;
 }

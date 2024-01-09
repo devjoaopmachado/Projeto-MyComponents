@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Página que incopora todos todo o contéudo do curso de we fundamentos da Serliv">
+    <meta name="author" content="João Paulo Machado">
+    <meta name="keywords"
+        content="HTML5, CSS3, semântica, tipografia, cards. listas, Formulário, botôes e dados tabuares">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilo.css">
+
+
+    <title>Projeto My Components</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <a href="#"><img class="perfil-img" src="imagens/perfil.png" alt="Foto de Perfil"></a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tipografia.html">Tipografia</a></li>
+                <li><a href="cards.html">Cards</a></li>
+                <li><a href="listas.html">Listas</a></li>
+                <li><a href="formulario.html">Formulário</a></li>
+                <li><a href="botoes.html">Botões</a></li>
+                <li><a href="tabelas.html">Tabelas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <h1>My Components</h1>
+        <article class="hightlight">
+            <h2>Tipografia</h2>
+            <p>A tipografia transmite nossas definições de tamanhos e espaçamentos e deve ser utilizada respeitando a
+                hierarquia dos elementos da interface.</p>
+        </article>
+        <section>
+            <h3>Elementos</h3>
+            <article>
+                <h4>Textos</h4>
+                <p>Esse texto esta escrito em <b>negrito</b> e esse é <strong><!--semântica-->texto forte</strong>.</p>
+                <p>Este texto está em <i>itálico</i> e este está com <em><!--semântica-->ênfase</em>.</p>
+                <p>Isto é um texto escrito de forma
+                    <u
+                        class="underline"><!--Não utilizar tag <u> para esta funcionalidade (sublinhar o texto). Para isso é melhor o text-decoration com uma span no css com class iqual o exemplo "erada" por exemplo.-->erada</u>
+                    e isso é um <a href="#">link</a>.
+                </p>
+            </article>
+            <article>
+                <h4>Sobresrito e Subscrito</h4>
+                <p>3<sup>2</sup> é igual à 9</p>
+                <p>A formula da água é H<sub>2</sub>O</p>
+            </article>
+            <article>
+                <h4>Abreviações</h4>
+                <p><!--Sem semântica-->Para criar páginas na web precisamos aprender sobre HTML</p>
+                <p>Para criar páginas na web precisamos aprender sobre <a
+                        href="#dnf-html"><!--o ID da dfn vincula o href da âncora para definição da abbr acima.--><abbr
+                            title="Linguagem de Marcação de HiperTexto">HTML</abbr></a>.</p>
+                <p><!-- SEMÂNTICA - mdn -  O paragráfo ancestral, dt / dd, e section são considerados a definição do termo. -->O
+                    <dfn id="#dnf-html">
+                        <abbr title="Linguagem de Marcação de HiperTexto"><!--semântica-->HTML</abbr>
+                    </dfn>é a principal Linguagem da web onde podemos incluir nosso conteúdo de forma
+                    semântica.
+                </p>
+            </article>
+            <article>
+                <h4>Citações</h4>
+                <blockquote><!--semântica - Blockquote é a citação longa e a cite é o propríetário da citação-->
+                    <p>O ruim não é ter trabalho. O ruim é ter de trabalhar.</p>
+                    <cite>Seu Madruga</cite>
+                </blockquote>
+                <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+                    <!--semântica atributo cite referenciando para a url-->
+                    O elemento HTML &lt;blockquote&gt; (ou elemento HTML de citação de bloco)indica que o texto incluído
+                    é uma citação estendida.
+                    <cite>MDN</cite>
+                </blockquote>
+                <p>Segundo o seu Madruga <q>A vingança nunca é plena, mata a alma e
+                        envenena<!-- semântica citação curta, sem bloco de citação--></q>.</p>
+                <p>De acordo com o site da Mozilla,<!-- semântica citação curta, com cite url--><q
+                        cite="https://www.mozilla.org/en-US/about/history/details/">Firefox foi lançado em 2004 e foi um
+                        grande sucesso.</q></p>
+            </article>
+            <p>O filme <cite>Escola do Rock</cite> contém várias música antigas.</p>
+
+
+            <article>
+                <h4>Coisas de computador</h4>
+                <!-- SEMÂNTICA  
+                TAG code - o tezto ficar com a mesma font de cód. 
+                TAG pre - tag envolve a area para uma pré formatação
+                TAG samp - mensagem de retorno da interação do código. 
+                tag kbd - Mostrar a indicação para pressionar uma tecla.        
+            -->
+                <p>A propriedade <code>background</code> do CSS serve para colocar uma imagem de fundo</p>
+                <pre>
+            Este texto é um texto pré formatado
+</pre>
+
+                <p>Um exemplo de aplicação de texto de código css pré formatado.</p>
+                <pre>
+    <code>.main-nav>ul>li a {
+    display: block;
+    padding: 1.2rem 0;
+    text-decoration: none;
+    transition: padding-right .2s, backgroundo-color .4s;
+    background-color: transparent;
+        }
+    </code>
+</pre>
+                <p>Após executar o método <code>push()</code> obtive o retorno <samp
+                        lang="en-us"><!--Sem semântica Atributo lang onformando que o texto está em outro idioma-->
+                        undefined has not a
+                        push () function. </samp>
+                </p>
+
+                <p>pressione as teclas <kbd>CTRL</kbd> + <kbd>C</kbd> para copiar</p>
+
+
+            </article>
+            <article>
+                <h4>Datas e horários</h4>
+                <!-- Desta forma o user agent sabe que é uma data. Cria indicação no mobile add na agenda, lembrete... -->
+                <p>O evento ocorrerá em <time datetime="2025-11-10"> 10 de novembro de 2025</time>./p>
+                <p>O evento ocorrerá em <time datetime="2025-11-10">10/11/2025</time>.</p>
+                <p>O evento ocorrerá às <time datetime="2025-11-10T20:00:00">20:00 do dia 10 de novembro de 2025</time>.
+                </p>
+                <p>O evento ocorrerá às <time
+                        datetime="2025-11-10T20:00:00-03:00:00"><!--Semântica No atributo datetime deve informar a data padrão en-us e a hora com o T e fuso horário. NO caso Brasil -03:00:00 horas. Coferir este conteúdo-->20:00
+                        do dia 10 de novembro de 2025</time>.</p>
+                <h5 lang="en-us">JS Conference</h5>
+
+                <p>O evento iniciará exatamente às <time datetime="T19:00:00">19:00</time>.</p>
+
+
+
+                <p>O evento ocorrerá às 20:00 do dia <del datetime="2024-01-09">10 de novembro de 2025</del> <ins><time
+                            datetime="2025-11-10T20:00:00-03:00">11 de novembro de 2025</time></ins>.</p>
+                <!--Semânticamente, mostrar que houve uma alteração na data inicial. Del sinaliza um documento excluido, alterado. o atributo datetime para informar a data da exclusão. A tag <ins> é o conteúdo inserido mediante a alteração anterior.-->
+
+
+            </article>
+
+
+
+        </section>
+    </main>
+</body>
+
+</html>
