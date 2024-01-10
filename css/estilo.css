@@ -34,11 +34,7 @@ h2 {
     margin-top: 1rem;
 }
 
-article {
-    /* aplicação para apoio dos elementos as margins do h1 e h2 são seram sobrepostase*/
-   padding: 1em 0;
 
-}
 
 h2,
 h3,
@@ -58,6 +54,15 @@ h6 {
 a {
     color: inherit;
     /* herdando cor do body*/
+}
+
+article {
+    /* aplicação para apoio dos elementos as margins do h1 e h2 são seram sobrepostase*/
+   padding: 1em 0;
+
+}
+section {
+    margin-bottom: 3rem;
 }
 
 /*--------------------------------------------------------*/
@@ -99,7 +104,7 @@ a {
     background-color: transparent;
 }
 
-.main-nav>ul>li a:hover {
+.main-nav>ul>li a:hover , .main-nav>ul>li a:focus {/*-------------para além de ter a animação no hover, também quando navega pelo tab---------------*/
     background-color: var(--colorpdrbck);
     padding-right: 1rem;
 }
@@ -120,6 +125,61 @@ a {
 
     border-left: 1px solid var(--colororange);
     font-size: 1.1em;
-    padding-left: 1em;
+    /* padding-left: 1em; */
+    padding: 0 0 0 1em; /* Foi aplicado esse padding na edit dos cards para tirar o espaçamento entre o h2 e items abaixo e acima. o padding no article sera apoio inicial para as margins tag h1 e h2 não sobreescreverem */
     margin-bottom: 2.2em;
+}
+
+/*-------------cards---------------*/
+
+.card {
+    max-width: 740px; /*tamanho original da imagem em px*/
+    background-color: var(--colorblack);
+    padding: 0; /*tivemos que sobreescrever esse padding por ter aplicado anteriormente na tag article, isso impactou na class .card*/
+}
+
+.card_content {
+    padding: .5em 1em 1em;
+}
+
+.card_content p, .card_title {
+    margin:0;
+
+}
+.card_title {
+    font-size: 1.75em;
+}
+.card img { /* imagem se adaptando ao tamanho do conteiner, obdecendo o tamanho max da própria imagem*/
+    max-width: 100%;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    padding-top:1.5rem ;
+    }
+
+    .row > * { /* || qualquer elemento que for filho da class .row || 1 para grow (crescer o máximo que puder) 0 para shrink (não diminuir) 0 ou 0% para basic (o tamanho original do item) Isto garante que as colunas fiquem do mesmo tamanho independente das quantidades de flex itens dentro da class .row e do conteúdos de cada flex item.*/
+        flex: 1 0 0;
+    }
+    
+/*-------------listas---------------*/
+.alternate {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.alternate li {
+    padding: 0;
+}
+
+.alternate li:not(:last-child) {
+    border-bottom: 2px solid;
+    padding: 0;
+}
+.roman {
+    list-style-type: upper-roman;
+}
+.list-emoji {
+    list-style-type:"\1f642";
 }
