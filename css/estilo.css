@@ -4,6 +4,8 @@
     --colorblack: #31333b;
     --colorpdrtext: #e7e7e7;
     --colorpdrbck: #444856;
+    --colorpdrdark: #23252d;
+    --defaultgap: 3rem;
 }
 
 html {
@@ -58,9 +60,10 @@ a {
 
 article {
     /* aplicação para apoio dos elementos as margins do h1 e h2 são seram sobrepostase*/
-   padding: 1em 0;
+    padding: 1em 0;
 
 }
+
 section {
     margin-bottom: 3rem;
 }
@@ -104,7 +107,9 @@ section {
     background-color: transparent;
 }
 
-.main-nav>ul>li a:hover , .main-nav>ul>li a:focus {/*-------------para além de ter a animação no hover, também quando navega pelo tab---------------*/
+.main-nav>ul>li a:hover,
+.main-nav>ul>li a:focus {
+    /*-------------para além de ter a animação no hover, também quando navega pelo tab---------------*/
     background-color: var(--colorpdrbck);
     padding-right: 1rem;
 }
@@ -114,55 +119,71 @@ section {
     background-color: var(--colorpdrbck);
     flex: 1 0;
     /*declarando largura --> grow, para o .main não aumentar da sua largura. shrink, par a .main não diminuir */
-    padding: 6.5rem 6rem 100vh; /* padding de 100vh para sempre ter barra de rolagem*/
+    padding: 6.5rem 6rem 100vh;
+    /* padding de 100vh para sempre ter barra de rolagem*/
 }
 
 /*-------------tipografia---------------*/
 .underline {
     text-decoration: red wavy underline;
 }
+
 .hightlight {
 
     border-left: 1px solid var(--colororange);
     font-size: 1.1em;
     /* padding-left: 1em; */
-    padding: 0 0 0 1em; /* Foi aplicado esse padding na edit dos cards para tirar o espaçamento entre o h2 e items abaixo e acima. o padding no article sera apoio inicial para as margins tag h1 e h2 não sobreescreverem */
+    padding: 0 0 0 1em;
+    /* Foi aplicado esse padding na edit dos cards para tirar o espaçamento entre o h2 e items abaixo e acima. o padding no article sera apoio inicial para as margins tag h1 e h2 não sobreescreverem */
     margin-bottom: 2.2em;
 }
 
 /*-------------cards---------------*/
 
 .card {
-    max-width: 740px; /*tamanho original da imagem em px*/
+    max-width: 740px;
+    /*tamanho original da imagem em px*/
     background-color: var(--colorblack);
-    padding: 0; /*tivemos que sobreescrever esse padding por ter aplicado anteriormente na tag article, isso impactou na class .card*/
+    padding: 0;
+    /*tivemos que sobreescrever esse padding por ter aplicado anteriormente na tag article, isso impactou na class .card*/
 }
 
 .card_content {
     padding: .5em 1em 1em;
 }
 
-.card_content p, .card_title {
-    margin:0;
+.card_content p,
+.card_title {
+    margin: 0;
 
 }
+
 .card_title {
     font-size: 1.75em;
 }
-.card img { /* imagem se adaptando ao tamanho do conteiner, obdecendo o tamanho max da própria imagem*/
+
+.card img {
+    /* imagem se adaptando ao tamanho do conteiner, obdecendo o tamanho max da própria imagem*/
     max-width: 100%;
 }
+
 .row {
     display: flex;
     justify-content: space-between;
-    gap: 3rem;
-    padding-top:1.5rem ;
-    }
+    gap: var(--defaultgap);
+    padding-top: 1.5rem;
+}
 
-    .row > * { /* || qualquer elemento que for filho da class .row || 1 para grow (crescer o máximo que puder) 0 para shrink (não diminuir) 0 ou 0% para basic (o tamanho original do item) Isto garante que as colunas fiquem do mesmo tamanho independente das quantidades de flex itens dentro da class .row e do conteúdos de cada flex item.*/
-        flex: 1 0 0;
-    }
-    
+.row,
+.row {
+    padding: 0;
+}
+
+.row>* {
+    /* || qualquer elemento que for filho da class .row || 1 para grow (crescer o máximo que puder) 0 para shrink (não diminuir) 0 ou 0% para basic (o tamanho original do item) Isto garante que as colunas fiquem do mesmo tamanho independente das quantidades de flex itens dentro da class .row e do conteúdos de cada flex item.*/
+    flex: 1 0 0;
+}
+
 /*-------------listas---------------*/
 .alternate {
     list-style-type: none;
@@ -177,9 +198,80 @@ section {
     border-bottom: 2px solid;
     padding: 0;
 }
+
 .roman {
     list-style-type: upper-roman;
 }
+
 .list-emoji {
-    list-style-type:"\1f642";
+    list-style-type: "\1f642";
+}
+
+/*-------------Formulários---------------*/
+input,
+label,
+textarea,
+select {
+    /*Para  ocupar 100% do width disponivel e gerar quebra. São display inline por padrão */
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="radio"] , input[type="checkbox"]  {
+    width: auto;
+    
+    /*voltar para o valor padrão*/
+} 
+
+input,
+textarea,
+select {
+    background-color: #ccc;
+    padding: 1.2rem;
+    border-radius: 5px;
+    margin-bottom: 1.6rem;
+    border: 0;
+}
+textarea {
+    resize: none;
+  }
+  
+
+.btn {
+    background-color: var(--colorpdrdark);
+    border: 2px solid var(--colorpdrdark);
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    padding: .8em 1.2em;
+    border-radius: 5px;
+}
+.btn + .btn {
+    margin-left: 2rem;
+}
+
+.btn-stroke {
+    background-color: transparent;
+}
+.btn-big {
+font-size: 1.6rem;
+}
+.btn-full {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+.btn-full + .btn-full {
+    margin-left: 0;
+    margin-top: 2rem;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--colorblack);
+}
+.form-quiz {
+width: calc(50% - (var(--defaultgap) / 2));
+    
 }

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Página que incopora todos todo o contéudo do curso de we fundamentos da Serliv">
+    <meta name="author" content="João Paulo Machado">
+    <meta name="keywords"
+        content="HTML5, CSS3, semântica, tipografia, cards. listas, Formulário, botôes e dados tabuares">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilo.css">
+
+
+    <title>Projeto My Components</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <a href="#"><img class="perfil-img" src="imagens/perfil.png" alt="Foto de Perfil"></a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tipografia.html">Tipografia</a></li>
+                <li><a href="cards.html">Cards</a></li>
+                <li><a href="listas.html">Listas</a></li>
+                <li><a href="formulario.html">Formulário</a></li>
+                <li><a href="botoes.html">Botões</a></li>
+                <li><a href="tabelas.html">Tabelas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <h1>My Components</h1>
+        <section>
+            <h2>Entre em contato</h2>
+            <div class="row">
+
+                <form action="#" method="get">
+                    <div class="row">
+
+                        <div>
+                            <label for="user.name">Nome</label>
+                            <input type="text" name="user.name" id="user.name" placeholder="nome completo" required>
+                        </div>
+                        <div>
+                            <label for="user.email">Email</label>
+                            <input type="email" name="user.email" id="user.email" required autocomplete="off">
+                        </div>
+                    </div>
+                    
+                    <label for="user.msg">Digite sua mensagem</label>
+                    <textarea name="user.msg" id="user.msg" rows="8"></textarea>
+                    <input type="submit" value="Enviar" class="btn">
+
+                </form>
+                <address>
+                    <p>Brasil, São Paulo, Litoral norte, Ubatuba.</p>
+                    <p>+55 12 982189980</p>
+                    <p>contato.devjpm@gmail.com</p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58570.43120827619!2d-45.12639751710935!3d-23.436936771911753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd5228bab1966d%3A0x9905169ef1825576!2sUbatuba%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1704973109617!5m2!1spt-BR!2sbr"
+                        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </address>
+
+            </div>
+
+        </section>
+        <section>
+            <h2>Quiz</h2>
+            <form action="#" method="get" class="form-quiz">
+                <label for="tech">Qual é a sua linguagem preferida?</label>
+                <select name="technology" id="tech">
+                    <option value="null">selecione</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">Javascript</option>
+                </select>
+                <label>Baixa prioridade <input name="priority" type="radio" value="low"></label>
+                <label>Média prioridade <input name="priority" type="radio" value="medium"></label>
+                <label>Alta prioridade <input name="priority" type="radio" value="high"></label>
+
+                <label> <input type="checkbox" name="copy" value="true"> Envie-me uma cópia</label>
+                <label> <input type="checkbox" name="humano" value="true"> Sou um humano</label>
+
+                <div class="row">
+                    <input type="reset" value="Limpar">
+                    <input class="btn btn-stroke" type="submit" value="Enviar">
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+</body>
+
+</html>
