@@ -1,6 +1,6 @@
 :root {
     /* cores do projeto*/
-    --colororange: #ff7833;
+    --colororange: #18c1ad;
     --colorblack: #31333b;
     --colorpdrtext: #e7e7e7;
     --colorpdrbck: #444856;
@@ -17,6 +17,10 @@ body {
     margin: 0;
     color: var(--colorpdrtext);
     background-color: #ccc;
+    background-image: url(../imagens/bg-unsplash.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     min-height: 100vh;
     line-height: 1.7;
@@ -75,17 +79,22 @@ section {
 .main-header {
     flex: 0 0 26rem;
     /* declarando largura --> 1grow, para o .main-header não aumentar da sua largura. 2shrink, par a .main-header não diminuir e 3basic a largura;*/
-    background-color: var(--colorblack);
+    background-color: rgba(49, 51, 59, 0.8);
+
 
 }
 
 .main-nav {
     text-align: right;
     padding: 6.5rem 2.4rem 2.4rem;
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
 .perfil-img {
     width: 10rem;
+    border-radius: 50%;
 
 }
 
@@ -114,9 +123,15 @@ section {
     padding-right: 1rem;
 }
 
+.fa-brands {
+    font-size: 2rem;
+    padding: .5em;
+    background-color: red;
+}
+
 /*-------------main---------------*/
 .main {
-    background-color: var(--colorpdrbck);
+    background-color: rgba(68, 72, 86, .6);
     flex: 1 0;
     /*declarando largura --> grow, para o .main não aumentar da sua largura. shrink, par a .main não diminuir */
     padding: 6.5rem 6rem 100vh;
@@ -218,11 +233,12 @@ select {
     box-sizing: border-box;
 }
 
-input[type="radio"] , input[type="checkbox"]  {
+input[type="radio"],
+input[type="checkbox"] {
     width: auto;
-    
+
     /*voltar para o valor padrão*/
-} 
+}
 
 input,
 textarea,
@@ -233,10 +249,11 @@ select {
     margin-bottom: 1.6rem;
     border: 0;
 }
+
 textarea {
     resize: none;
-  }
-  
+}
+
 
 .btn {
     background-color: var(--colorpdrdark);
@@ -247,22 +264,26 @@ textarea {
     padding: .8em 1.2em;
     border-radius: 5px;
 }
-.btn + .btn {
+
+.btn+.btn {
     margin-left: 2rem;
 }
 
 .btn-stroke {
     background-color: transparent;
 }
+
 .btn-big {
-font-size: 1.6rem;
+    font-size: 1.6rem;
 }
+
 .btn-full {
     display: inline-block;
     width: 100%;
     box-sizing: border-box;
 }
-.btn-full + .btn-full {
+
+.btn-full+.btn-full {
     margin-left: 0;
     margin-top: 2rem;
 }
@@ -271,7 +292,66 @@ font-size: 1.6rem;
 .btn:focus {
     background-color: var(--colorblack);
 }
+
 .form-quiz {
-width: calc(50% - (var(--defaultgap) / 2));
-    
+    width: calc(50% - (var(--defaultgap) / 2));
+
 }
+
+/*-------------Tabelas---------------*/
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.table td:last-child,
+.table th:last-child {
+    text-align: right;
+}
+
+.table td,
+.table th {
+    padding: 1.6rem;
+
+}
+
+.table:not(.table-alternate) td,
+.table:not(.table-alternate) th {
+    border-bottom: 2px solid var(--colorpdrdark);
+}
+
+.table-alternate tbody tr:nth-child(odd) {
+    background-color: var(--colorblack);
+}
+
+.table-verticalLines td:not(:last-child),
+.table-verticalLines th:not(:last-child) {
+    border-right: 1px solid var(--colorpdrdark);
+
+}
+.icon {
+   font-size: 4rem;
+   fill: currentColor;
+   vertical-align: middle;
+   display: inline-block;
+ margin-right: 1rem;
+  }
+
+  .link-icon {
+    margin-right: 3rem;
+    text-decoration: none;
+   transition: color .3s ;
+   font-style: normal;
+    
+
+  }
+
+  .link-icon:hover {
+    color: var(--colororange);
+  
+  }
